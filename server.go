@@ -9,5 +9,7 @@ func main() {
 }
 
 func handler(w http.ResponseWriter, r *http.Request) {
+  _ = r.ParseForm()
   fmt.Fprintf(w, "Hi Roong %s", r.URL.Path)
+  fmt.Fprintf(w, "<pre>%s</pre>", r.Form)
 }
